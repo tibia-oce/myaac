@@ -165,7 +165,7 @@ $config = array(
 	'account_welcome_mail' => true, // send welcome email when user registers
 	'account_mail_change' => 2, // how many days user need to change email to account - block hackers
 	'account_country' => true, // user will be able to set country of origin when registering account, this information will be viewable in others places aswell
-	'account_country_recognize' => true, // should country of user be automatically recognized by his IP? This makes an external API call to http://ipinfo.io
+	'account_country_recognize' => false, // BUGGED!!!! should country of user be automatically recognized by his IP? This makes an external API call to http://ipinfo.io
 	'account_change_character_name' => false, // can user change their character name for premium points?
 	'account_change_character_name_points' => 30, // cost of name change
 	'account_change_character_sex' => false, // can user change their character sex for premium points?
@@ -240,7 +240,7 @@ $config = array(
 	// guilds
 	'guild_management' => true, // enable guild management system on the site?
 	'guild_need_level' => 1, // min. level to form a guild
-	'guild_need_premium' => true, // require premium account to form a guild?
+	'guild_need_premium' => false, // require premium account to form a guild?
 	'guild_image_size_kb' => 80, // maximum size of the guild logo image in KB (kilobytes)
 	'guild_description_chars_limit' => 1000, // limit of guild description
 	'guild_description_lines_limit' => 6, // limit of lines, if description has more lines it will be showed as long text, without 'enters'

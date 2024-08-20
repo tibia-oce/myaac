@@ -15,8 +15,6 @@ if (!hasFlag(FLAG_CONTENT_PAGES) && !superAdmin()) {
 	return;
 }
 
-header('X-XSS-Protection:0');
-
 $name = $p_title = '';
 $groups = new OTS_Groups_List();
 

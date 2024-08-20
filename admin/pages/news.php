@@ -19,8 +19,6 @@ if (!hasFlag(FLAG_CONTENT_PAGES) && !superAdmin()) {
 	return;
 }
 
-header('X-XSS-Protection:0');
-
 // some constants, used mainly by database (cannot by modified without schema changes)
 define('TITLE_LIMIT', 100);
 define('BODY_LIMIT', 65535); // maximum news body length

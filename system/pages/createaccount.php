@@ -287,6 +287,7 @@ if($save)
 	}
 }
 
+// TODO: Bugged... seems to timeout server waiting for a response?
 $country_recognized = null;
 if($config['account_country_recognize']) {
 	$country_session = getSession('country');
