@@ -33,8 +33,6 @@ RUN chown -R www-data.www-data /var/www
 
 COPY --chown=www-data:www-data config.php /var/www/html/install/includes/config.php
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
-# COPY --chown=www-data:www-data docker/config.lua /home/$user/forgottenserver
-COPY --chown=www-data:www-data docker/config.local.php /var/www/html
 COPY --chown=www-data:www-data . /var/www/html
 
 RUN chown -R www-data:www-data /var/www/html \
