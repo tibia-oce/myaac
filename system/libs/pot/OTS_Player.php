@@ -651,7 +651,7 @@ class OTS_Player extends OTS_Row_DAO
     {
 		//global $config;
 		//if($path == '')
-		//	$path = $config['data_path'].'XML/groups.xml';
+		//	$path = $config['data_path'].'xml/groups.xml';
 
         if( !isset($this->data['group_id']) )
         {

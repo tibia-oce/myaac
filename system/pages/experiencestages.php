@@ -11,9 +11,9 @@
 defined('MYAAC') or die('Direct access not allowed!');
 $title = 'Experience Stages';
 
-if(file_exists($config['data_path'] . 'XML/stages.xml')) {
+if(file_exists($config['data_path'] . 'xml/stages.xml')) {
 	$stages = new DOMDocument();
-	$stages->load($config['data_path'] . 'XML/stages.xml');
+	$stages->load($config['data_path'] . 'xml/stages.xml');
 }
 
 if(!isset($config['experienceStages']) || !getBoolean($config['experienceStages']))

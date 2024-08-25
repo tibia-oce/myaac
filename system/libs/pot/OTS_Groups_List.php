@@ -48,7 +48,7 @@ class OTS_Groups_List implements IteratorAggregate, Countable
 		if(!isset($file[0]))
 		{
 			global $config;
-			$file = $config['data_path'] . 'XML/groups.xml';
+			$file = $config['data_path'] . 'xml/groups.xml';
 		}
 
 		if(!@file_exists($file)) {
