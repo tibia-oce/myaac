@@ -31,6 +31,8 @@ $config = array(
 	// Load environment variables with defaults (derived from config lua)
     'statusPort' => getenv('STATUS_PROTOCOL_PORT') ?: 7171,
     'statustimeout' => getenv('STATUS_TIMEOUT') ?: 2000,
+	
+	// TODO:  Remove config sets on 'statusProtocolPort'
 
     // database details (leave blank for auto detect from config lua)
     'database_host' => getenv('MYSQL_HOST') ?: 'database',
@@ -47,8 +49,8 @@ $config = array(
     'otserv_version' => TFS_02,
 
     // Other dupes from server/conf lua
-    'ip' => getenv('SERVER_IP') ?: '192.168.176.1',
-    'gameProtocolPort' => getenv('STATUS_PROTOCOL_PORT') ?: 7171,
+    'ip' => getenv('SERVER_IP') ?: '0.0.0.0',
+    'gameProtocolPort' => getenv('GAME_PROTOCOL_PORT') ?: 7171,
     'serverName' => getenv('SERVER_NAME') ?: 'OTServBR-Global',
     'pvptype' => getenv('WORLD_TYPE') ?: 'pvp',
     'freePremium' => getenv('freePremium') ?: 'false',

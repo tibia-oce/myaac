@@ -27,26 +27,17 @@ Write-Colored "--------------------------------------" $Default
 Write-Output ""
 Write-Colored "Stopping and cleaning any existing containers..." $Yellow
 cd docker
-docker-compose down -v
+docker-compose down
+docker-compose down --volumes
+
 docker-compose rm -f
-
-Write-Output ""
-Write-Colored "Downloading the most recent versions of containers..." $Yellow
-docker-compose pull
-
-Write-Output ""
-Write-Colored "Starting containers..." $Yellow
-docker-compose up -d
+docker-compose down --rmi all --volumes
+docker rmi $(docker images -aq)
+docker volume rm $(docker volume ls -q)
+docker system prune -a --volumes --force
 cd ..
 
-# Retrieve IP and port
-$containerIP = docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' myaac
-$containerPort = docker port myaac
-$containerPort = $containerPort.Split(":")[1]
-
-# Print completion message and link
+# Print completion message
 Write-Output ""
-Write-Colored "Docker operations completed. You can now close this window." $Green
-$link = "http://localhost:${containerPort}"
-Write-Colored "Access it here: $link" $Cyan
+Write-Colored "Docker volumes and images removed.." $Green
 Write-Output ""
