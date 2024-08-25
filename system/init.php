@@ -89,7 +89,7 @@ else {
 
 	$vocations = new DOMDocument();
 
-	$file = $config['data_path'] . 'XML/vocations.xml';
+	$file = $config['data_path'] . 'xml/vocations.xml';
 
 	if(!$vocations->load($file))
 		throw new RuntimeException('ERROR: Cannot load <i>vocations.xml</i> - the file is malformed. Check the file with xml syntax validator.');
