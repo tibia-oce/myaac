@@ -29,7 +29,8 @@ class Creatures {
 		}
 
 		try {
-			self::$monstersList = new OTS_MonstersList(config('data_path') . 'monster/');
+			// TODO: Fix monsterlist constructor, and simplify handling of path '/'
+			self::$monstersList = new OTS_MonstersList(config('data_directory') . config('data_path') . '/xml/');
 		}
 		catch(Exception $e) {
 			self::$lastError = $e->getMessage();

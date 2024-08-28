@@ -20,7 +20,7 @@
 $config = array(
 
 	// installation checks
-	'installed' => false,
+	'installed' => true,
 	'install_ignore_ip_check' => true,
 
 	// directories & files
@@ -44,8 +44,7 @@ $config = array(
     'database_log' => false, // should database queries be logged and and saved into system/logs/database.log?
     'database_persistent' => false, // use database permanent connection (like server), may speed up your site
     'passwordType' => getenv('PASSWORD_TYPE') ?: 'sha1',
-    'database_encryption' => 'md5',
-    'useMD5Passwords' => false,
+    'database_encryption' => 'sha1',
     'otserv_version' => TFS_02,
 
     // Other dupes from server/conf lua
@@ -53,7 +52,7 @@ $config = array(
     'gameProtocolPort' => getenv('GAME_PROTOCOL_PORT') ?: 7171,
     'serverName' => getenv('SERVER_NAME') ?: 'Black Tek',
     'pvptype' => getenv('WORLD_TYPE') ?: 'pvp',
-    'freePremium' => getenv('freePremium') ?: 'false',
+    'freePremium' => getenv('freePremium') ?: 'true',
 
     // Experience and stages
     'experienceStages' => false,
@@ -130,9 +129,9 @@ $config = array(
 	'language' => 'en', // default language (currently only 'en' available)
 	'language_allow_change' => false,
 
-	'visitors_counter' => true,
+	'visitors_counter' => false,
 	'visitors_counter_ttl' => 10, // how long visitor will be marked as online (in minutes)
-	'views_counter' => true,
+	'views_counter' => false,
 
 	// cache system. by default file cache is used
 	'cache_engine' => 'auto', // apc, apcu, eaccelerator, xcache, file, auto, or blank to disable.
@@ -157,12 +156,12 @@ $config = array(
 	'account_mail_confirmed_reward' => [ // reward users for confirming their E-Mails
 		// account_mail_verify needs to be enabled too
 		'premium_days' => 0,
-		'premium_points' => 0,
+		'premium_points' => 500,
 		'coins' => 0,
 		'message' => 'You received %d %s for confirming your E-Mail address.' // example: You received 20 premium points for confirming your E-Mail address.
 	],
 	'account_mail_unique' => true, // email addresses cannot be duplicated? (one account = one email)
-	'account_premium_days' => 0, // default premium days on new account
+	'account_premium_days' => 300, // default premium days on new account
 	'account_premium_points' => 0, // default premium points on new account
 	'account_welcome_mail' => true, // send welcome email when user registers
 	'account_mail_change' => 2, // how many days user need to change email to account - block hackers
@@ -347,7 +346,7 @@ $config = array(
 	'experiencetable_columns' => 3, // how many columns to display in experience table page. * experiencetable_rows, 5 = 500 (will show up to 500 level)
 	'experiencetable_rows' => 200, // till how many levels in one column
 	'date_timezone' => 'Europe/Berlin', // more info at http://php.net/manual/en/timezones.php
-	'footer_show_load_time' => true, // display load time of the page in the footer
+	'footer_show_load_time' => false, // display load time of the page in the footer
 
 	'npc' => array(),
 

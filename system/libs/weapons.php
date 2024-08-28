@@ -22,7 +22,7 @@ class Weapons {
 		} catch (PDOException $error) {
 		}
 
-		$file_path = $config['data_path'] . 'weapons/weapons.xml';
+		$file_path = $config['data_directory'] . $config['data_path'] . '/xml/weapons.xml';
 		if (!file_exists($file_path)) {
 			self::$error = 'Cannot load file ' . $file_path;
 			return false;

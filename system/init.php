@@ -89,10 +89,10 @@ else {
 
 	$vocations = new DOMDocument();
 
-	$file = $config['data_path'] . 'xml/vocations.xml';
+	$file = $config['data_directory'] . '/xml/vocations.xml';
 
 	if(!$vocations->load($file))
-		throw new RuntimeException('ERROR: Cannot load <i>vocations.xml</i> - the file is malformed. Check the file with xml syntax validator.');
+		throw new RuntimeException('ERROR: Cannot load (' . $file . ') - the file is malformed. Check the file with an XML syntax validator.');
 
 	$config['vocations'] = array();
 	foreach($vocations->getElementsByTagName('vocation') as $vocation) {
