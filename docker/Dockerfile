@@ -31,7 +31,6 @@ RUN mkdir -p /home/$user/.composer && \
 
 RUN chown -R www-data.www-data /var/www
 
-COPY --chown=www-data:www-data config.php /var/www/html/install/includes/config.php
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 COPY --chown=www-data:www-data . /var/www/html
 

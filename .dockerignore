@@ -1,11 +1,11 @@
-vcproj/
 tests/
 docs/
-docker/
+scripts/
 
-sonar-project.properties
 *.md
 Jenkinsfile
 .*
+.env
+.env.dist
 gdb_debug
 client_assertions.txt

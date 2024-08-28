@@ -17,7 +17,7 @@ class Items
 
 	public static function loadFromXML($show = false)
 	{
-		$file_path = config('data_path') . 'items/items.xml';
+		$file_path = config('data_directory') . config('data_path') . '/xml/items.xml';
 		if (!file_exists($file_path)) {
 			self::$error = 'Cannot load file ' . $file_path;
 			return false;

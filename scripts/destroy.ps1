@@ -29,9 +29,12 @@ Write-Colored "Stopping and cleaning any existing containers..." $Yellow
 cd docker
 docker-compose down --rmi all --volumes
 docker system prune -a --volumes --force
+docker volume prune --force
+docker builder prune --all --force
+docker network prune --force
 cd ..
 
 # Print completion message
 Write-Output ""
-Write-Colored "Docker volumes and images removed.." $Green
+Write-Colored "Docker volumes, images, caches, and networks removed.." $Green
 Write-Output ""

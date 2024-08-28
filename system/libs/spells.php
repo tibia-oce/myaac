@@ -41,7 +41,7 @@ class Spells {
 		}
 
 		try {
-			self::$spellsList = new OTS_SpellsList($config['data_path'].'spells/spells.xml');
+			self::$spellsList = new OTS_SpellsList($config['data_directory'] . $config['data_path'] . '/xml/spells.xml');
 		}
 		catch(Exception $e) {
 			self::$lastError = $e->getMessage();

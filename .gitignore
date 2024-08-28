@@ -23,8 +23,6 @@ cypress/screenshots
 releases
 tmp
 
-config.local.php
-
 # all custom templates
 templates/*
 !templates/tibiacom

@@ -1,4 +1,3 @@
-version: "1.0"
 services:
 
   database:
@@ -8,11 +7,11 @@ services:
     env_file:
       - '../.env'
     networks:
-      - network
+      - tibia
     ports:
       - "3306:3306"
     volumes:
-      - 'db-volume:/var/lib/mysql'
+      - 'database:/var/lib/mysql'
       - './schema.sql:/docker-entrypoint-initdb.d/init.sql'
     healthcheck:
       test: ["CMD", "healthcheck.sh"]
@@ -21,8 +20,21 @@ services:
       timeout: 5s
       retries: 3
 
-  myaac:
-    container_name: myaac
+  phpmyadmin:
+    container_name: phpmyadmin
+    image: phpmyadmin
+    restart: always
+    env_file:
+      - '../.env'
+    networks:
+      - tibia
+    ports:
+      - 5001:80
+    depends_on:
+      - database
+      
+  website:
+    container_name: website
     ports:
       - 5000:80
     build:
@@ -35,27 +47,30 @@ services:
     env_file:
       - '../.env'
     networks:
-      - network
+      - tibia
     depends_on:
       - database
       - phpmyadmin
 
-  phpmyadmin:
-    container_name: phpmyadmin
-    image: phpmyadmin
+  server:
+    container_name: server
+    image: ghcr.io/tibia-oce/server:latest
     restart: always
-    env_file:
-      - '../.env'
-    networks:
-      - network
     ports:
-      - 5001:80
+      - 7171:7171
+      - 7172:7172
+    networks:
+      - tibia
     depends_on:
       - database
+      - website
+      - phpmyadmin
+    env_file:
+      - '../.env'
 
 volumes:
-  db-volume:
+  database:
 
 networks:
-  network:
+  tibia:
     driver: bridge
