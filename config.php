@@ -36,11 +36,11 @@ $config = array(
 
     // database details (leave blank for auto detect from config lua)
     'database_host' => getenv('MYSQL_HOST') ?: 'database',
-    'database_user' => getenv('MYSQL_USER') ?: 'canary',
-    'database_password' => getenv('MYSQL_PASS') ?: 'canary',
-    'database_name' => getenv('MYSQL_DATABASE') ?: 'otservbr-global',
+    'database_user' => getenv('MYSQL_USER') ?: 'forgottenserver',
+    'database_password' => getenv('MYSQL_PASS') ?: 'forgottenserver',
+    'database_name' => getenv('MYSQL_DATABASE') ?: 'forgottenserver',
     'database_port' => getenv('MYSQL_PORT') ?: 3306,
-    'database_socket' => getenv('MYSQL_SOCK') ?: '', // set if you want to connect to database through socket (example: /var/run/mysqld/mysqld.sock)
+    'database_socket' => '', // set if you want to connect to database through socket (example: /var/run/mysqld/mysqld.sock)
     'database_log' => false, // should database queries be logged and and saved into system/logs/database.log?
     'database_persistent' => false, // use database permanent connection (like server), may speed up your site
     'passwordType' => getenv('PASSWORD_TYPE') ?: 'sha1',
@@ -51,7 +51,7 @@ $config = array(
     // Other dupes from server/conf lua
     'ip' => getenv('SERVER_IP') ?: '0.0.0.0',
     'gameProtocolPort' => getenv('GAME_PROTOCOL_PORT') ?: 7171,
-    'serverName' => getenv('SERVER_NAME') ?: 'OTServBR-Global',
+    'serverName' => getenv('SERVER_NAME') ?: 'Black Tek',
     'pvptype' => getenv('WORLD_TYPE') ?: 'pvp',
     'freePremium' => getenv('freePremium') ?: 'false',
 

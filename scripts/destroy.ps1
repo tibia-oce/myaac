@@ -27,13 +27,7 @@ Write-Colored "--------------------------------------" $Default
 Write-Output ""
 Write-Colored "Stopping and cleaning any existing containers..." $Yellow
 cd docker
-docker-compose down
-docker-compose down --volumes
-
-docker-compose rm -f
 docker-compose down --rmi all --volumes
-docker rmi $(docker images -aq)
-docker volume rm $(docker volume ls -q)
 docker system prune -a --volumes --force
 cd ..
 
