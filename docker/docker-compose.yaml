@@ -38,6 +38,7 @@ services:
       - network
     depends_on:
       - database
+      - phpmyadmin
 
   phpmyadmin:
     container_name: phpmyadmin
@@ -51,7 +52,6 @@ services:
       - 5001:80
     depends_on:
       - database
-      - myaac
 
 volumes:
   db-volume:

@@ -34,10 +34,6 @@ Write-Colored "Downloading the most recent versions of containers..." $Yellow
 docker-compose pull
 
 Write-Output ""
-Write-Colored "Building the myaac container..." $Yellow
-docker-compose build --no-cache myaac
-
-Write-Output ""
 Write-Colored "Starting containers..." $Yellow
 docker-compose up -d
 cd ..
@@ -51,5 +47,5 @@ $containerPort = $containerPort.Split(":")[1]
 Write-Output ""
 Write-Colored "Docker operations completed. You can now close this window." $Green
 $link = "http://localhost:${containerPort}"
-Write-Colored "Access it here: $link" $Cyan
+Write-Colored "Access the website here: $link" $Cyan
 Write-Output ""
